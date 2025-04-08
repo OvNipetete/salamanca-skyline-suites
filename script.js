@@ -61,27 +61,27 @@ const elementsWithTranslation = document.querySelectorAll('[data-es][data-en]');
 function changeLanguage(lang) {
     // Actualizar los botones de idioma
     languageBtns.forEach(btn => {
-        if (btn.getAttribute('data-lang') === lang) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
+    if (btn.getAttribute('data-lang') === lang) {
+    btn.classList.add('active');
+    } else {
+    btn.classList.remove('active');
+    }
     });
-    
+
     // Actualizar los textos
     elementsWithTranslation.forEach(element => {
-        const translation = element.getAttribute(`data-${lang}`);
-        if (translation) {
-            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                element.placeholder = translation;
-            } else if (element.tagName === 'OPTION') {
-                element.textContent = translation;
-            } else {
-                element.textContent = translation;
-            }
-        }
+    const translation = element.getAttribute(`data-${lang}`);
+    if (translation) {
+    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+    element.placeholder = translation;
+    } else if (element.tagName === 'OPTION') {
+    element.textContent = translation;
+    } else {
+    element.textContent = translation;
+    }
+    }
     });
-    
+
     // Guardar la preferencia de idioma
     localStorage.setItem('preferredLanguage', lang);
 }
@@ -89,18 +89,28 @@ function changeLanguage(lang) {
 // Evento click para los botones de idioma
 languageBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        const lang = btn.getAttribute('data-lang');
-        changeLanguage(lang);
+    const lang = btn.getAttribute('data-lang');
+    changeLanguage(lang);
     });
 });
 
-// Cargar el idioma preferido al iniciar
+// Inicialización
 document.addEventListener('DOMContentLoaded', () => {
+    // Inicializar AOS (Animate On Scroll)
+    AOS.init({
+        duration: 800,
+        easing: 'ease',
+        once: true,
+        offset: 100,
+        delay: 0
+    });
+
+    // Cargar el idioma preferido
     const savedLanguage = localStorage.getItem('preferredLanguage');
     if (savedLanguage) {
-        changeLanguage(savedLanguage);
+    changeLanguage(savedLanguage);
     }
-    
+
     // Establecer la fecha mínima en los inputs de fecha como hoy
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('fecha-entrada').min = today;
@@ -128,3 +138,20 @@ document.addEventListener('DOMContentLoaded', () => {
     fechaSalida.min = fechaEntrada;
     });
 });
+
+// Función para revelar elementos cuando se hacen visibles
+function revealOnScroll() {
+    const elements = document.querySelectorAll('.reveal-on-scroll');
+
+    elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (elementTop < windowHeight - 100) {
+            element.classList.add('revealed');
+        }
+    });
+}
+
+// Añadir evento de scroll para revelar elementos
+window.addEventListener('scroll', revealOnScroll);
