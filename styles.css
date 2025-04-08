@@ -154,6 +154,34 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+/* Selector de idioma */
+.language-selector {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.language-btn {
+    background: none;
+    border: none;
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-gray);
+    cursor: pointer;
+    padding: 5px 8px;
+    transition: color 0.3s ease;
+}
+
+.language-btn:hover, .language-btn.active {
+    color: var(--color-primary);
+}
+
+.language-divider {
+    color: var(--color-gray);
+    margin: 0 5px;
+}
+
 /* Hero Section */
 .hero {
     height: 100vh;
@@ -331,15 +359,43 @@ nav ul li a:hover {
     color: var(--color-primary);
 }
 
-.mapa, .mapa-placeholder {
+/* Estilos para el mapa y puntos de interés */
+.mapa-container {
     height: 100%;
-    min-height: 300px;
-    background-color: #f1f1f1;
+}
+
+#mapa-interactivo {
+    height: 400px;
+    width: 100%;
     border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.puntos-interes {
+    margin-top: 2rem;
+}
+
+.puntos-interes h4 {
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.lista-poi li {
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    color: var(--color-gray);
+}
+
+.poi-distance {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin-right: 10px;
+    min-width: 50px;
+    text-align: center;
+    display: inline-block;
 }
 
 /* Reservas */
@@ -491,40 +547,50 @@ footer {
 /* Responsive */
 @media (max-width: 992px) {
     .ubicacion-content {
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
     }
 
     .galeria-grid {
-        grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mapa-container {
+    margin-top: 2rem;
     }
 }
 
 @media (max-width: 768px) {
     nav {
-        display: none;
+    display: none;
     }
 
     .menu-toggle {
-        display: block;
+    display: block;
+    }
+    
+    .language-selector {
+        position: absolute;
+        top: 20px;
+        right: 60px;
     }
 
     .hero h2 {
-        font-size: 2.5rem;
+    font-size: 2.5rem;
     }
 
     .hero p {
-        font-size: 1.2rem;
+    font-size: 1.2rem;
     }
 
     .form-reserva {
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
     }
 
     .form-reserva button {
-        grid-column: span 1;
+    grid-column: span 1;
     }
 
     .galeria-grid {
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
     }
 }

@@ -23,22 +23,22 @@ formReserva.addEventListener('submit', (e) => {
 // Animación de scroll suave para los enlaces internos
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+    e.preventDefault();
 
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
 
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80, // Ajuste para el header fijo
-                behavior: 'smooth'
-            });
+    if (targetElement) {
+    window.scrollTo({
+    top: targetElement.offsetTop - 80, // Ajuste para el header fijo
+    behavior: 'smooth'
+    });
 
-            // Cerrar el menú móvil si está abierto
-            if (nav.classList.contains('active')) {
-                nav.classList.remove('active');
-            }
-        }
+    // Cerrar el menú móvil si está abierto
+    if (nav.classList.contains('active')) {
+    nav.classList.remove('active');
+    }
+    }
     });
 });
 
@@ -47,14 +47,60 @@ window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
 
     if (window.scrollY > 50) {
-        header.classList.add('scrolled');
+    header.classList.add('scrolled');
     } else {
-        header.classList.remove('scrolled');
+    header.classList.remove('scrolled');
     }
 });
 
-// Inicialización
+// Selector de idioma
+const languageBtns = document.querySelectorAll('.language-btn');
+const elementsWithTranslation = document.querySelectorAll('[data-es][data-en]');
+
+// Función para cambiar el idioma
+function changeLanguage(lang) {
+    // Actualizar los botones de idioma
+    languageBtns.forEach(btn => {
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    
+    // Actualizar los textos
+    elementsWithTranslation.forEach(element => {
+        const translation = element.getAttribute(`data-${lang}`);
+        if (translation) {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                element.placeholder = translation;
+            } else if (element.tagName === 'OPTION') {
+                element.textContent = translation;
+            } else {
+                element.textContent = translation;
+            }
+        }
+    });
+    
+    // Guardar la preferencia de idioma
+    localStorage.setItem('preferredLanguage', lang);
+}
+
+// Evento click para los botones de idioma
+languageBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const lang = btn.getAttribute('data-lang');
+        changeLanguage(lang);
+    });
+});
+
+// Cargar el idioma preferido al iniciar
 document.addEventListener('DOMContentLoaded', () => {
+    const savedLanguage = localStorage.getItem('preferredLanguage');
+    if (savedLanguage) {
+        changeLanguage(savedLanguage);
+    }
+    
     // Establecer la fecha mínima en los inputs de fecha como hoy
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('fecha-entrada').min = today;
@@ -70,15 +116,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Validar que la fecha de salida sea posterior a la de entrada
     document.getElementById('fecha-entrada').addEventListener('change', function() {
-        const fechaEntrada = this.value;
-        const fechaSalida = document.getElementById('fecha-salida');
+    const fechaEntrada = this.value;
+    const fechaSalida = document.getElementById('fecha-salida');
 
-        if (fechaSalida.value <= fechaEntrada) {
-            const nuevaFechaSalida = new Date(fechaEntrada);
-            nuevaFechaSalida.setDate(nuevaFechaSalida.getDate() + 1);
-            fechaSalida.value = nuevaFechaSalida.toISOString().split('T')[0];
-        }
+    if (fechaSalida.value <= fechaEntrada) {
+    const nuevaFechaSalida = new Date(fechaEntrada);
+    nuevaFechaSalida.setDate(nuevaFechaSalida.getDate() + 1);
+    fechaSalida.value = nuevaFechaSalida.toISOString().split('T')[0];
+    }
 
-        fechaSalida.min = fechaEntrada;
+    fechaSalida.min = fechaEntrada;
     });
 });
