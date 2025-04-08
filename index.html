@@ -9,57 +9,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- Incluir Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <!-- Incluir AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <!-- Header -->
     <header>
     <div class="container">
-        <div class="logo">
-            <h1>Salamanca Skyline Suites</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a></li>
-                <li><a href="#suites" data-es="Suites" data-en="Suites">Suites</a></li>
-                <li><a href="#galeria" data-es="Galería" data-en="Gallery">Galería</a></li>
-                <li><a href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a></li>
-                <li><a href="#reservas" class="btn-reserva" data-es="Reservas" data-en="Bookings">Reservas</a></li>
-            </ul>
-        </nav>
-        <div class="language-selector">
-            <button class="language-btn active" data-lang="es">ES</button>
-            <span class="language-divider">|</span>
-            <button class="language-btn" data-lang="en">EN</button>
-        </div>
-        <div class="menu-toggle">
-            <i class="fas fa-bars"></i>
-        </div>
+    <div class="logo">
+    <h1>Salamanca Skyline Suites</h1>
+    </div>
+    <nav>
+    <ul>
+    <li><a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a></li>
+    <li><a href="#suites" data-es="Suites" data-en="Suites">Suites</a></li>
+    <li><a href="#galeria" data-es="Galería" data-en="Gallery">Galería</a></li>
+    <li><a href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a></li>
+    <li><a href="#reservas" class="btn-reserva" data-es="Reservas" data-en="Bookings">Reservas</a></li>
+    </ul>
+    </nav>
+    <div class="language-selector">
+    <button class="language-btn active" data-lang="es">ES</button>
+    <span class="language-divider">|</span>
+    <button class="language-btn" data-lang="en">EN</button>
+    </div>
+    <div class="menu-toggle">
+    <i class="fas fa-bars"></i>
+    </div>
     </div>
     </header>
 
     <!-- Hero Section -->
     <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h2 data-es="Lujo moderno con vistas históricas" data-en="Modern luxury with historic views">Lujo moderno con vistas históricas</h2>
-            <p data-es="Descubre nuestras exclusivas suites en el corazón de Salamanca" data-en="Discover our exclusive suites in the heart of Salamanca">Descubre nuestras exclusivas suites en el corazón de Salamanca</p>
-            <a href="#reservas" class="btn-primary" data-es="Reserva ahora" data-en="Book now">Reserva ahora</a>
-        </div>
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+    <h2 data-es="Lujo moderno con vistas históricas" data-en="Modern luxury with historic views">Lujo moderno con vistas históricas</h2>
+    <p data-es="Descubre nuestras exclusivas suites en el corazón de Salamanca" data-en="Discover our exclusive suites in the heart of Salamanca">Descubre nuestras exclusivas suites en el corazón de Salamanca</p>
+    <a href="#reservas" class="btn-primary" data-es="Reserva ahora" data-en="Book now">Reserva ahora</a>
+    </div>
     </section>
 
     <!-- Descripción del Proyecto -->
     <section class="descripcion">
-        <div class="container">
-            <h2 data-es="Una experiencia única en Salamanca" data-en="A unique experience in Salamanca">Una experiencia única en Salamanca</h2>
-            <p data-es="Salamanca Skyline Suites ofrece cuatro exclusivas suites de diseño contemporáneo en pleno centro histórico. Un concepto que fusiona el lujo moderno con las vistas incomparables del skyline salmantino, creando un espacio donde el confort y la elegancia se encuentran con la historia." data-en="Salamanca Skyline Suites offers four exclusive contemporary design suites in the heart of the historic center. A concept that fuses modern luxury with the incomparable views of the Salamanca skyline, creating a space where comfort and elegance meet history.">Salamanca Skyline Suites ofrece cuatro exclusivas suites de diseño contemporáneo en pleno centro histórico. Un concepto que fusiona el lujo moderno con las vistas incomparables del skyline salmantino, creando un espacio donde el confort y la elegancia se encuentran con la historia.</p>
-        </div>
+    <div class="container" data-aos="fade-up" data-aos-duration="800">
+    <h2 data-es="Una experiencia única en Salamanca" data-en="A unique experience in Salamanca">Una experiencia única en Salamanca</h2>
+    <p data-es="Salamanca Skyline Suites ofrece cuatro exclusivas suites de diseño contemporáneo en pleno centro histórico. Un concepto que fusiona el lujo moderno con las vistas incomparables del skyline salmantino, creando un espacio donde el confort y la elegancia se encuentran con la historia." data-en="Salamanca Skyline Suites offers four exclusive contemporary design suites in the heart of the historic center. A concept that fuses modern luxury with the incomparable views of the Salamanca skyline, creating a space where comfort and elegance meet history.">Salamanca Skyline Suites ofrece cuatro exclusivas suites de diseño contemporáneo en pleno centro histórico. Un concepto que fusiona el lujo moderno con las vistas incomparables del skyline salmantino, creando un espacio donde el confort y la elegancia se encuentran con la historia.</p>
+    </div>
     </section>
 
     <!-- Tipos de Suites -->
     <section id="suites" class="suites">
     <div class="container">
-    <h2 data-es="Nuestras Suites" data-en="Our Suites">Nuestras Suites</h2>
+    <h2 data-aos="fade-up" data-es="Nuestras Suites" data-en="Our Suites">Nuestras Suites</h2>
     <div class="suites-grid">
-    <div class="suite-card">
+    <div class="suite-card" data-aos="fade-up" data-aos-delay="100">
     <div class="suite-img suite-img-1"></div>
     <div class="suite-info">
     <h3 data-es="Suite Catedral Premium" data-en="Premium Cathedral Suite">Suite Catedral Premium</h3>
@@ -72,7 +74,7 @@
     </div>
     </div>
 
-    <div class="suite-card">
+    <div class="suite-card" data-aos="fade-up" data-aos-delay="200">
     <div class="suite-img suite-img-2"></div>
     <div class="suite-info">
     <h3 data-es="Suite Catedral Deluxe" data-en="Deluxe Cathedral Suite">Suite Catedral Deluxe</h3>
@@ -85,7 +87,7 @@
     </div>
     </div>
 
-    <div class="suite-card">
+    <div class="suite-card" data-aos="fade-up" data-aos-delay="300">
     <div class="suite-img suite-img-3"></div>
     <div class="suite-info">
     <h3 data-es="Suite Skyline Superior" data-en="Superior Skyline Suite">Suite Skyline Superior</h3>
@@ -98,7 +100,7 @@
     </div>
     </div>
 
-    <div class="suite-card">
+    <div class="suite-card" data-aos="fade-up" data-aos-delay="400">
     <div class="suite-img suite-img-4"></div>
     <div class="suite-info">
     <h3 data-es="Suite Skyline Comfort" data-en="Comfort Skyline Suite">Suite Skyline Comfort</h3>
@@ -117,14 +119,14 @@
     <!-- Galería -->
     <section id="galeria" class="galeria">
     <div class="container">
-    <h2 data-es="Galería" data-en="Gallery">Galería</h2>
+    <h2 data-aos="fade-up" data-es="Galería" data-en="Gallery">Galería</h2>
     <div class="galeria-grid">
-    <div class="galeria-item galeria-item-1"></div>
-    <div class="galeria-item galeria-item-2"></div>
-    <div class="galeria-item galeria-item-3"></div>
-    <div class="galeria-item galeria-item-4"></div>
-    <div class="galeria-item galeria-item-5"></div>
-    <div class="galeria-item galeria-item-6"></div>
+    <div class="galeria-item galeria-item-1" data-aos="zoom-in" data-aos-delay="100"></div>
+    <div class="galeria-item galeria-item-2" data-aos="zoom-in" data-aos-delay="200"></div>
+    <div class="galeria-item galeria-item-3" data-aos="zoom-in" data-aos-delay="300"></div>
+    <div class="galeria-item galeria-item-4" data-aos="zoom-in" data-aos-delay="100"></div>
+    <div class="galeria-item galeria-item-5" data-aos="zoom-in" data-aos-delay="200"></div>
+    <div class="galeria-item galeria-item-6" data-aos="zoom-in" data-aos-delay="300"></div>
     </div>
     </div>
     </section>
@@ -132,9 +134,9 @@
     <!-- Ubicación -->
     <section id="ubicacion" class="ubicacion">
     <div class="container">
-    <h2 data-es="En el corazón de Salamanca" data-en="In the heart of Salamanca">En el corazón de Salamanca</h2>
+    <h2 data-aos="fade-up" data-es="En el corazón de Salamanca" data-en="In the heart of Salamanca">En el corazón de Salamanca</h2>
     <div class="ubicacion-content">
-    <div class="ubicacion-info">
+    <div class="ubicacion-info" data-aos="fade-right" data-aos-duration="800">
     <p>Ubicadas a pocos pasos de la Plaza Mayor y con vistas privilegiadas a la Catedral, nuestras suites ofrecen una localización inmejorable para explorar el rico patrimonio cultural de Salamanca. Disfruta de la ciudad dorada desde un enclave único.</p>
     <div class="direccion">
     <h4 data-es="Dirección" data-en="Address">Dirección</h4>
@@ -156,7 +158,7 @@
     </ul>
     </div>
     </div>
-    <div class="mapa-container">
+    <div class="mapa-container" data-aos="fade-left" data-aos-duration="800">
     <div id="mapa-interactivo"></div>
     </div>
     </div>
@@ -166,8 +168,8 @@
     <!-- Reservas -->
     <section id="reservas" class="reservas">
     <div class="container">
-    <h2 data-es="Reserva tu estancia" data-en="Book your stay">Reserva tu estancia</h2>
-    <form class="form-reserva">
+    <h2 data-aos="fade-up" data-es="Reserva tu estancia" data-en="Book your stay">Reserva tu estancia</h2>
+    <form class="form-reserva" data-aos="fade-up" data-aos-delay="200">
     <div class="form-group">
     <label for="fecha-entrada" data-es="Fecha de entrada" data-en="Check-in date">Fecha de entrada</label>
     <input type="date" id="fecha-entrada" required>
@@ -213,9 +215,9 @@
     <!-- Testimonios -->
     <section class="testimonios">
     <div class="container">
-    <h2 data-es="Lo que dicen nuestros huéspedes" data-en="What our guests say">Lo que dicen nuestros huéspedes</h2>
+    <h2 data-aos="fade-up" data-es="Lo que dicen nuestros huéspedes" data-en="What our guests say">Lo que dicen nuestros huéspedes</h2>
     <div class="testimonios-slider">
-    <div class="testimonio">
+    <div class="testimonio" data-aos="fade-up" data-aos-delay="100">
     <div class="testimonio-texto">
     <p>"Una experiencia inolvidable. Las vistas a la Catedral desde la terraza son espectaculares, y el diseño interior es impecable. Volveremos sin duda."</p>
     </div>
@@ -231,7 +233,7 @@
     </div>
     </div>
 
-    <div class="testimonio">
+    <div class="testimonio" data-aos="fade-up" data-aos-delay="200">
     <div class="testimonio-texto">
     <p>"La ubicación es inmejorable, a pocos pasos de la Plaza Mayor. La suite estaba impecable y el personal muy atento. Recomendable 100%."</p>
     </div>
@@ -254,11 +256,11 @@
     <footer>
     <div class="container">
     <div class="footer-content">
-    <div class="footer-logo">
+    <div class="footer-logo" data-aos="fade-up" data-aos-delay="100">
     <h3>Salamanca Skyline Suites</h3>
     <p data-es="Lujo moderno con vistas históricas" data-en="Modern luxury with historic views">Lujo moderno con vistas históricas</p>
     </div>
-    <div class="footer-links">
+    <div class="footer-links" data-aos="fade-up" data-aos-delay="200">
     <h4 data-es="Enlaces rápidos" data-en="Quick links">Enlaces rápidos</h4>
     <ul>
     <li><a href="#inicio">Inicio</a></li>
@@ -268,14 +270,14 @@
     <li><a href="#reservas">Reservas</a></li>
     </ul>
     </div>
-    <div class="footer-contacto">
+    <div class="footer-contacto" data-aos="fade-up" data-aos-delay="300">
     <h4 data-es="Contacto" data-en="Contact">Contacto</h4>
     <p>Calle Ejemplo, 123</p>
     <p>37001 Salamanca, España</p>
     <p>Tel: +34 923 123 456</p>
     <p>Email: info@salamancaskylinesuites.com</p>
     </div>
-    <div class="footer-social">
+    <div class="footer-social" data-aos="fade-up" data-aos-delay="400">
     <h4 data-es="Síguenos" data-en="Follow us">Síguenos</h4>
     <div class="social-icons">
     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -295,6 +297,9 @@
 
     <!-- Incluir Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- Incluir AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
     <!-- Script para el mapa interactivo -->
     <script>
